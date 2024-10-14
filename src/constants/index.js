@@ -85,5 +85,5 @@ export const PROJECTS = [
 export const CONTACT = {
   address: "16-2-3, Satya Veeraju Nilayam, Rajamahendravram, Andhrapradesh, India",
   phoneNo: "+91-7013982881 ",
-  email: "dattasai0409@gmail.com",
+  email: "dattasailucky0409@gmail.com",
 };
