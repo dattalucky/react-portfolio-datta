@@ -9,11 +9,18 @@ export const ABOUT_TEXT = `I am an enthusiastic Software Engineer with three yea
 
 export const EXPERIENCES = [
   {
+    year: "2025 - Present",
+    role: "Data Engineer & Analytics Specialist(Systems Engineer)",
+    company: "Tata Consulting Services.pvt.ltd",
+    description: `Completed a knowledge transition for the Eli Lilly GCP migration and analytics project while having hands-on experience with important tools like BigQuery, Cloud Storage, and Dataflow within the Google Application Modernization framework. . Helped to design and test a small-scale data pipelines with the use of Python and SQL, incorporating it to ingestion and transformation steps to reach modernization goals.  Consulted with senior team members to learn and adhere to GCP-based workflows, operating as part of the initial tasks related to data validation, table creation in BigQuery, and general cloud activities.`,
+    technologies: ["GCP Services", "Python", "SQL", "Terraform"],
+  },
+  {
     year: "2023 - 2024",
     role: "Engineer",
     company: "Virtusa Consulting Services.pvt.ltd",
     description: `Create AWS infrastructure by using Terraform. Worked on (AMIs,EC2,S3,EBS,RDS,Cloudwatch,Cloud-Formation,Security-Groups,Network routing). Create Migration Design. Integration of Git. Involved in Research of the project application architecture to support/resolve build, compile and test issues/problems`,
-    technologies: ["AWS", "Gitlab", "Github", "Terraform"],
+    technologies: ["AWS", "Gitlab", "Github", "Terraform", "Python", "SQL"],
   },
   {
     year: "2022 - 2023",
