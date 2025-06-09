@@ -1,5 +1,3 @@
-@ -0,0 +1,39 @@
-
 import Projects from "./components/Projects";
 import Education from "./components/Education"; 
 import Experience from "./components/Experience";
