@@ -1,20 +1,31 @@
-import project1 from "../assets/projects/project-1.jpeg"
-import project2 from "../assets/projects/project-2.jpeg";
-import project3 from "../assets/projects/project-3.jpeg";
-import project4 from "../assets/projects/project-4.jpeg";
+import project1 from "../assets/projects/project-1.png"
+import project2 from "../assets/projects/project-2.png";
+import project3 from "../assets/projects/project-3.png";
+import project4 from "../assets/projects/project-4.png";
 
-export const HERO_CONTENT = `I am a passionate data engineer with a knack for designing robust and scalable data solutions. With 3 year of hands-on experience, I have honed my skills in data engineering tools and technologies like Python, SQL,AWS & .net. My goal is to leverage my expertise to build efficient data pipelines, ensuring data integrity and driving meaningful insights that support business growth and enhance decision-making processes.`;
 
-export const ABOUT_TEXT = `I am an enthusiastic Software Engineer with three years of experience specializing in C#, Python, and AWS. My career has been driven by a passion for crafting robust and innovative software solutions that enhance efficiency and effectiveness. I have honed my skills across various facets of software development, from designing scalable applications to optimizing cloud infrastructure. My work includes building high-performance backend systems with C#, developing data-driven solutions with Python, and managing secure, scalable cloud environments using AWS. I am committed to continuous learning and adapting to new technologies to stay at the forefront of the industry. My goal is to contribute to cutting-edge projects and drive impactful outcomes through my technical expertise.`;
+export const HERO_CONTENT = `Specializing in Python, AWS, and infrastructure automation. I design secure, high-performance data workflows and implement efficient deployment pipelines to drive business agility and operational excellence.`;
+
+export const ABOUT_TEXT = `I’m a Software Engineer with 4 years of experience specializing in C#, Python, and AWS. I build the engines that run modern applications—focusing on high-performance backend systems, data-driven software, and scalable, secure cloud infrastructure.
+
+I am driven by a passion for continuous learning and a desire to turn complex problems into elegant, efficient solutions. Whether I'm optimizing an AWS environment or architecting a new application from the ground up, my focus is always on delivering robust tech that drives real business impact.`;
 
 export const EXPERIENCES = [
   {
-    year: "2025 - Present",
-    role: "Data Engineer & Analytics Specialist(Systems Engineer)",
-    company: "Tata Consulting Services.pvt.ltd",
-    description: `Completed a knowledge transition for the Eli Lilly GCP migration and analytics project while having hands-on experience with important tools like BigQuery, Cloud Storage, and Dataflow within the Google Application Modernization framework. . Helped to design and test a small-scale data pipelines with the use of Python and SQL, incorporating it to ingestion and transformation steps to reach modernization goals.  Consulted with senior team members to learn and adhere to GCP-based workflows, operating as part of the initial tasks related to data validation, table creation in BigQuery, and general cloud activities.`,
-    technologies: ["GCP Services", "Python", "SQL", "Terraform"],
+    year: "June 2025 - Present",
+    role: "AWS Data Engineer",
+    company: "Tata Consultancy Services" ,
+    description: `Optimized AWS Glue ETL scripts using PySpark to load data from Amazon S3 to MySQL, ensuring high performance and data integrity. Designed and managed MySQL database objects such as tables, views, and indexes to support business reporting needs. Performed advanced data transformations and validations in Glue to deliver clean, analytics-ready datasets. The data pipelines were automatically and standardized using AWS Glue Workflows and Amazon EventBridge to make them run event-driven, with errors nevertheless handled. The ETL workflows were tested, debugged and permanently maintained through collaboration with cross-functional teams to ensure that scaling and reliability were guaranteed.`,
+    technologies: ["AWS Glue", "PySpark", "MySQL", "Amazon S3", "AWS Glue","EventBridge"],
   },
+  {
+    year: "April 2025 - June 2025",
+    role: "Data Engineer & Analytics Specialist",
+    company: "Tata Consultancy Services",
+    description: `Completed a knowledge transition for the Eli Lilly GCP migration and analytics project while having hands-on experience with important tools like BigQuery, Cloud Storage, and Dataflow within the Google Application Modernization framework. Helped to design and test small-scale data pipelines with the use of Python and SQL, incorporating it to ingestion and transformation steps to reach modernization goals. Consulted with senior team members to learn and adhere to GCP-based workflows, operating as part of the initial tasks related to data validation, table creation in BigQuery, and general cloud activities.`,
+    technologies: ["GCP", "BigQuery", "Cloud Storage", "Dataflow", "Python", "SQL"],
+  },
+  
   {
     year: "2023 - 2024",
     role: "Engineer",

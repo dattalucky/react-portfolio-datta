@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Background Gradient */
+@layer components {
+  .bg-gradient {
+    @apply bg-linear-to-b;
+    background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
+  }
+}
