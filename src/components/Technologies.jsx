@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { FaAws, FaPython } from "react-icons/fa";
 import { SiTerraform } from "react-icons/si";
