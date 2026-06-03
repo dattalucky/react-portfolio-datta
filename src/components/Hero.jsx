@@ -3,9 +3,9 @@ import { HERO_CONTENT } from "../constants";
 
 import { motion } from "framer-motion";
 
-const Hero = () => {
+const Hero = ({ mode = "dark" }) => {
   return (
-    <div className="border-b border-neutral-900 pb-8 lg:pb-16 lg:mb-35">
+    <div className={`border-b ${mode === "dark" ? "border-neutral-900" : "border-neutral-300"} pb-8 lg:pb-16 lg:mb-35`}>
       <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen lg:min-h-0 lg:items-center gap-8 lg:gap-16 px-4 sm:px-6 lg:px-8">
         <div className="w-full lg:w-1/2 lg:order-1 order-2 flex flex-col justify-center">
           <div className="text-center lg:text-left">
@@ -39,19 +39,20 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="flex justify-center lg:justify-start"
             >
-              <a
+              <motion.a
                 href="/resume.pdf"
                 download="Datta_Sai_Simhadri_Resume.pdf"
-                className="group relative inline-flex items-center justify-center px-8 py-4 bg-linear-to-r from-slate-900 to-slate-800 text-white font-semibold rounded-xl border-2 border-slate-700 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300 overflow-hidden"
-              >
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                className={`group relative inline-flex items-center justify-center px-8 py-4 rounded-2xl font-semibold transition-all duration-300 overflow-hidden ${mode === "dark" ? "bg-linear-to-r from-slate-900 to-slate-800 text-white border-2 border-slate-700 shadow-2xl shadow-purple-500/20 hover:border-purple-500" : "bg-white/95 text-violet-900 border border-violet-300 shadow-[0_20px_60px_rgba(139,92,246,0.15)] hover:border-violet-400 hover:shadow-[0_20px_70px_rgba(168,85,247,0.2)]"}`}> 
                 <span className="relative z-10 flex items-center gap-3">
-                  <svg className="w-5 h-5 transition-transform group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                   Download Resume
                 </span>
-                <div className="absolute inset-0 bg-linear-to-r from-purple-600/20 to-pink-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </a>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.16),transparent_40%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </motion.a>
             </motion.div>
           </div>
         </div>

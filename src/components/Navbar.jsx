@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaTwitter, FaInstagram, FaSun, FaMoon } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({ mode = "dark", toggleTheme = () => {} }) => {
   const [isAtTop, setIsAtTop] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
   const [resetTimer, setResetTimer] = useState(null);
@@ -50,7 +50,7 @@ const Navbar = () => {
         initial={false}
         animate={{ y: isVisible ? 0 : -100 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
-        className="relative bg-black/80 backdrop-blur-xl shadow-xl border-b border-white/10 flex items-center justify-between py-2 sm:py-3 md:py-4 px-2 sm:px-4 md:px-6"
+        className={`relative ${mode === "dark" ? "bg-black/80 border-white/10" : "bg-white/80 border-neutral-200"} backdrop-blur-xl shadow-xl border-b flex items-center justify-between py-2 sm:py-3 md:py-4 px-2 sm:px-4 md:px-6`}
         style={{ perspective: 1200 }}
       >
         <motion.button
@@ -60,18 +60,19 @@ const Navbar = () => {
           onHoverEnd={handleLogoHoverEnd}
           animate={logoControls}
           initial={{ rotateY: 0, scale: 1 }}
-          className="group relative w-28 h-10 rounded-2xl border border-white/15 bg-slate-950 shadow-[0_12px_30px_rgba(15,23,42,0.6)] overflow-hidden transform-gpu transition-transform duration-500"
+          className={`group relative w-28 h-10 rounded-2xl border border-white/15 ${mode==="dark"?"bg-slate-950 shadow-[0_12px_30px_rgba(15,23,42,0.6)]":"bg-white/80 shadow-md"} overflow-hidden transform-gpu transition-transform duration-500`}
           style={{ perspective: 1000 }}
         >
+          {/* Dark-mode logo (visible in dark) and Classic-mode logo (visible in classic) */}
           <motion.span
-            className="absolute inset-0 flex items-center justify-center text-xs sm:text-sm md:text-base font-bold text-white tracking-widest group-hover:text-cyan-300 transition-colors duration-300"
+            className={`absolute inset-0 flex items-center justify-center text-xs sm:text-sm md:text-base font-bold tracking-widest transition-opacity duration-300 ${mode==="dark"?"opacity-100 text-white":"opacity-0 text-neutral-900"}`}
             style={{ backfaceVisibility: "hidden", transform: "rotateY(0deg)" }}
           >
             Portfolio
           </motion.span>
           <motion.span
-            className="absolute inset-0 flex items-center justify-center text-xs sm:text-sm md:text-base font-bold text-white/80 tracking-widest group-hover:text-cyan-300 transition-colors duration-300"
-            style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+            className={`absolute inset-0 flex items-center justify-center text-xs sm:text-sm md:text-base font-bold tracking-widest transition-opacity duration-300 ${mode!=="dark"?"opacity-100 text-transparent bg-clip-text bg-linear-to-r from-purple-500 via-fuchsia-500 to-violet-500":"opacity-0 text-white/80"}`}
+            style={{ backfaceVisibility: "hidden", transform: "rotateY(0deg)" }}
           >
             Portfolio
           </motion.span>
@@ -90,6 +91,17 @@ const Navbar = () => {
           <a href="https://twitter.com" target="_blank" rel="noreferrer">
             <FaTwitter />
           </a>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            title={mode === "dark" ? "Switch to Classic" : "Switch to Dark"}
+            className="ml-3 px-4 py-1.5 rounded-full text-sm font-semibold text-white flex items-center justify-center transition-all duration-300 transform bg-linear-to-r from-purple-500 via-fuchsia-500 to-violet-500 hover:scale-105 hover:shadow-[0_0_20px_rgba(139,92,246,0.45)] shadow-purple-500/20"
+          >
+            {mode === "dark" ? <FaSun className="text-white" /> : <FaMoon className="text-white" />}
+          </button>
         </div>
       </motion.nav>
     </div>

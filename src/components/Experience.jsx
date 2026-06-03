@@ -65,32 +65,32 @@ const Experience = () => {
       </motion.h2>
 
       {/* CHANGED: Removed "items-center" and added "w-full" to ensure proper boundary for scrolling */}
-      <div className="max-w-5xl mx-auto flex flex-col w-full md:flex-row gap-8 md:gap-16">
+      <div className="max-w-5xl mx-auto flex flex-col w-full min-w-0 md:flex-row gap-8 md:gap-16">
         
         {/* Left Side: Navigation Tabs */}
         {/* CHANGED: Replaced "justify-center" with "justify-start w-full scroll-smooth" to prevent clipping on mobile */}
-        <div className="w-full md:w-1/3 flex justify-start md:flex-col overflow-x-auto md:overflow-visible no-scrollbar scroll-smooth border-b md:border-b-0 md:border-l border-neutral-800">
+        <div className="w-full md:w-1/3 min-w-0 flex flex-row md:flex-col justify-start gap-3 overflow-x-auto md:overflow-visible no-scrollbar scroll-smooth snap-x snap-mandatory border-b md:border-b-0 md:border-l border-neutral-800">
           {EXPERIENCES.map((experience, index) => (
             <button
               key={index}
               onClick={() => setActiveTab(index)}
-              // CHANGED: Reduced padding on mobile (px-4 py-3) and restored it for desktop (md:px-6 md:py-4)
-              className={`relative px-4 py-3 md:px-6 md:py-4 text-left whitespace-nowrap transition-all duration-300 ${
+              // CHANGED: Horizontal scroll pills on mobile, full-width buttons on desktop
+              className={`relative shrink-0 snap-start md:snap-none md:w-full min-w-max md:min-w-0 px-5 py-3 pb-6 md:py-4 md:pb-4 md:px-6 rounded-3xl text-left whitespace-nowrap md:whitespace-normal transition-all duration-300 ${
                 activeTab === index
-                  ? "text-white bg-neutral-900/50"
+                  ? "text-white bg-violet-500/15 md:bg-neutral-900/50 border border-violet-400/30 md:border-transparent"
                   : "text-neutral-500 hover:text-neutral-300 hover:bg-neutral-900/20"
               }`}
             >
               {activeTab === index && (
                 <motion.div
                   layoutId="activeTabIndicator"
-                  className="absolute bottom-0 md:bottom-auto md:top-0 left-0 w-full md:w-1 h-1 md:h-full bg-neutral-200"
+                  className="hidden md:block absolute bottom-0 md:bottom-auto md:top-0 left-0 w-full md:w-1 h-1 md:h-full bg-violet-400/40 z-0 pointer-events-none"
                   initial={false}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
               )}
               {/* CHANGED: Made the text slightly smaller on mobile (text-xs) to fit long company names */}
-              <span className="text-xs md:text-sm font-semibold tracking-wider uppercase">
+              <span className="relative z-10 text-xs md:text-sm font-semibold tracking-wider uppercase">
                 {experience.company}
               </span>
             </button>
@@ -98,7 +98,7 @@ const Experience = () => {
         </div>
 
         {/* Right Side: Content Area */}
-        <div className="w-full md:w-2/3 min-h-[300px]">
+        <div className="w-full md:w-2/3 min-w-0 min-h-75 md:pl-6">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -126,7 +126,7 @@ const Experience = () => {
                 variants={containerVariants}
                 initial="hidden"
                 animate="show"
-                className="mt-8 flex flex-wrap gap-2 md:gap-3"
+                className="mt-8 flex flex-wrap items-center gap-2 md:gap-3"
               >
                 {EXPERIENCES[activeTab].technologies.map((tech, index) => (
                   <motion.div
@@ -134,14 +134,14 @@ const Experience = () => {
                     variants={badgeVariants}
                     whileHover={{ y: -2, scale: 1.08 }}
                     transition={{ type: "spring", stiffness: 260, damping: 18 }}
-                    className="group relative flex items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 bg-[#111111] border border-neutral-800 rounded-lg overflow-hidden cursor-default transition-colors hover:border-neutral-600"
+                    className="group relative flex min-w-0 items-center gap-1.5 md:gap-2 px-2.5 py-1 md:px-3 md:py-1.5 bg-[#111111] border border-neutral-800 rounded-lg overflow-hidden cursor-default transition-colors hover:border-neutral-600"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-neutral-800/0 via-neutral-700/10 to-neutral-800/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-linear-to-r from-neutral-800/0 via-neutral-700/10 to-neutral-800/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     
-                    <span className="relative z-10 text-sm md:text-base opacity-70 group-hover:opacity-100 transition-opacity">
+                    <span className="relative z-10 flex h-5 min-h-5 items-center justify-center text-sm md:text-base opacity-70 group-hover:opacity-100 transition-opacity leading-none">
                       {getTechIcon(tech)}
                     </span>
-                    <span className="relative z-10 text-[10px] md:text-xs font-semibold text-neutral-400 group-hover:text-neutral-200 transition-colors tracking-wide">
+                    <span className="relative z-10 text-[10px] md:text-xs font-semibold text-neutral-400 group-hover:text-neutral-200 transition-colors tracking-wide whitespace-normal wrap-break-word leading-tight">
                       {tech}
                     </span>
                   </motion.div>

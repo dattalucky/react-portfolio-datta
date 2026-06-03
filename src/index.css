@@ -7,3 +7,33 @@
     background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
   }
 }
+
+/* Classic theme overrides (applied when top-level container has `classic` class) */
+.classic {
+  /* neutrals: make text darker and backgrounds lighter */
+  --color-neutral-200: #f3f4f6; /* light gray */
+  --color-neutral-300: #111827; /* dark text */
+  --color-neutral-400: #6b7280;
+  --color-neutral-500: #374151;
+  --color-neutral-600: #4b5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #1f2937;
+  --color-neutral-900: #111827;
+  --color-white: #111827; /* treat `text-white` as dark in classic */
+
+  /* purple/pink accents moderate for classic */
+  --color-purple-100: #f3e8ff;
+  --color-purple-400: #a78bfa;
+  --color-purple-500: #8b5cf6;
+
+  /* cyan accents */
+  --color-cyan-300: #7dd3fc;
+  --color-cyan-900: #075985;
+
+  /* override bg-gradient used by .bg-gradient via the component when classic */
+}
+
+/* When classic, adjust the component bg-gradient to a lighter radial */
+.classic .bg-gradient {
+  background: radial-gradient(125% 125% at 50% 10%, #fff 40%, #63e 100%);
+}
