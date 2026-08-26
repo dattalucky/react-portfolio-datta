@@ -11,15 +11,24 @@ export const ABOUT_TEXT = `I’m a Software Engineer with 4 years of experience 
 I am driven by a passion for continuous learning and a desire to turn complex problems into elegant, efficient solutions. Whether I'm optimizing an AWS environment or architecting a new application from the ground up, my focus is always on delivering robust tech that drives real business impact.`;
 
 export const EXPERIENCES = [
+
   {
-    year: "June 2025 - Present",
+  year: "January 2026 - Present",
+  role: "DevOps Engineer",
+  company: "Tata Consultancy Services (Client: Deutsche Bank)",
+  description: "Architected and provisioned secure, highly available cloud infrastructure for financial services applications using Terraform and AWS services, ensuring compliance with strict banking regulatory standards. Orchestrated CI/CD pipelines using Jenkins and GitLab for Python applications to reduce deployment times and enable zero-downtime releases. Managed containerized environments using Docker and Kubernetes, optimizing resource allocation and auto-scaling for high-volume transactional workloads. Implemented robust observability solutions with AWS CloudWatch and log aggregation tools to proactively detect incidents and minimize MTTR. Enforced DevSecOps practices by integrating vulnerability scanning, automated compliance checks, and secure secrets management into the deployment lifecycle.",
+  technologies: ["Terraform", "AWS", "Jenkins", "GitLab", "Docker", "Kubernetes", "CloudWatch", "DevSecOps"]
+  },
+
+  {
+    year: "June 2025 - January 2026",
     role: "AWS Data Engineer",
     company: "Tata Consultancy Services" ,
     description: `Optimized AWS Glue ETL scripts using PySpark to load data from Amazon S3 to MySQL, ensuring high performance and data integrity. Designed and managed MySQL database objects such as tables, views, and indexes to support business reporting needs. Performed advanced data transformations and validations in Glue to deliver clean, analytics-ready datasets. The data pipelines were automatically and standardized using AWS Glue Workflows and Amazon EventBridge to make them run event-driven, with errors nevertheless handled. The ETL workflows were tested, debugged and permanently maintained through collaboration with cross-functional teams to ensure that scaling and reliability were guaranteed.`,
     technologies: ["AWS Glue", "PySpark", "MySQL", "Amazon S3", "AWS Glue","EventBridge"],
   },
   {
-    year: "April 2025 - June 2025",
+    year: "April 2025 - December 2025",
     role: "Data Engineer & Analytics Specialist",
     company: "Tata Consultancy Services",
     description: `Completed a knowledge transition for the Eli Lilly GCP migration and analytics project while having hands-on experience with important tools like BigQuery, Cloud Storage, and Dataflow within the Google Application Modernization framework. Helped to design and test small-scale data pipelines with the use of Python and SQL, incorporating it to ingestion and transformation steps to reach modernization goals. Consulted with senior team members to learn and adhere to GCP-based workflows, operating as part of the initial tasks related to data validation, table creation in BigQuery, and general cloud activities.`,
