@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A React portfolio website",
   "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

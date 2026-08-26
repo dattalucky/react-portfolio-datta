@@ -15,7 +15,7 @@ export const EXPERIENCES = [
   {
   year: "January 2026 - Present",
   role: "DevOps Engineer",
-  company: "Tata Consultancy Services (Client: Deutsche Bank)",
+  company: "Tata Consultancy Services",
   description: "Architected and provisioned secure, highly available cloud infrastructure for financial services applications using Terraform and AWS services, ensuring compliance with strict banking regulatory standards. Orchestrated CI/CD pipelines using Jenkins and GitLab for Python applications to reduce deployment times and enable zero-downtime releases. Managed containerized environments using Docker and Kubernetes, optimizing resource allocation and auto-scaling for high-volume transactional workloads. Implemented robust observability solutions with AWS CloudWatch and log aggregation tools to proactively detect incidents and minimize MTTR. Enforced DevSecOps practices by integrating vulnerability scanning, automated compliance checks, and secure secrets management into the deployment lifecycle.",
   technologies: ["Terraform", "AWS", "Jenkins", "GitLab", "Docker", "Kubernetes", "CloudWatch", "DevSecOps"]
   },
